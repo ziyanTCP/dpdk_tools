@@ -1,0 +1,35 @@
+//
+// Created by ziyan on 2/4/20.
+//
+
+#ifndef MYNETWORK_LIBRARY_DPDK_UTILITY_H
+#define MYNETWORK_LIBRARY_DPDK_UTILITY_H
+
+#include <stddef.h>
+#include <rte_mbuf_core.h>
+#include <rte_byteorder.h>
+#include <rte_ether.h>
+
+#include <rte_tcp.h>
+#include <rte_ip.h>
+#include "/home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/ip.h"
+#include "/home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/mac.h"
+#include "/home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/dpdk_init.h"
+#include "/home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/tcp.h"
+
+
+#include "tcp/init.h"
+#include "tcp/tcp_action.h"
+#include "tcp/tcp_stream.h"
+#include "tcp/tcp_in.h"
+
+
+void rx_packets(struct rte_mbuf** pkt);
+void DumpHex(const void* data, size_t size);
+void analyze_TCP_packet(struct rte_mbuf *pkt);
+
+
+void menu(struct rte_mbuf *pkt, struct rte_mbuf *recv_pkt, char data[],rte_be32_t ip_src_addr, rte_be32_t ip_dst_addr,struct rte_ether_addr my_addr,struct rte_ether_addr eth_dst_addr);
+// recieve one packet
+//void rx_packets(struct rte_mbuf* pkt);
+#endif //MYNETWORK_LIBRARY_DPDK_UTILITY_H

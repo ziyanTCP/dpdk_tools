@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/lib.dir/main.c.o CMakeFiles/lib.dir/lib/ip.c.o CMakeFiles/lib.dir/lib/mac.c.o CMakeFiles/lib.dir/lib/dpdk_init.c.o CMakeFiles/lib.dir/lib/dpdk_utility.c.o  -o lib  -L/home/ziyan/song/Dropbox/dpdk/x86_64-native-linuxapp-gcc/include 

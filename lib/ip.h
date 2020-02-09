@@ -37,5 +37,21 @@ char * get_ip_data(struct rte_mbuf * pkt);
 
 uint32_t ip_string_to_rte_be32_t(char *);
 
-void send_ip_packet(struct rte_mbuf *pkt,char data[],rte_be32_t src_addr, rte_be32_t dst_addr, struct rte_ether_addr eth_src_addr, struct rte_ether_addr eth_dst_addr);
+
+uint8_t * send_ip_packet(
+        struct rte_mbuf *pkt,
+        rte_be32_t ip_src_addr,
+        rte_be32_t ip_dst_addr,
+        struct rte_ether_addr eth_src_addr,
+        struct rte_ether_addr eth_dst_addr,
+        uint16_t  tcp_len);
+
+void send_ip_raw(
+        struct rte_mbuf *pkt,
+        char data[],
+        rte_be32_t ip_src_addr,
+        rte_be32_t ip_dst_addr,
+        struct rte_ether_addr eth_src_addr,
+        struct rte_ether_addr eth_dst_addr);
+
 #endif //MYNETWORK_LIBRARY_IP_H
