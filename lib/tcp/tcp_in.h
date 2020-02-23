@@ -4,10 +4,12 @@
 
 #ifndef AUM_COORDINATOR_INCLUDE_MIDDLEMAN_ACTORS_TCP_CONN_TCP_IN_H_
 #define AUM_COORDINATOR_INCLUDE_MIDDLEMAN_ACTORS_TCP_CONN_TCP_IN_H_
-#include "tcp_stream.h"
-#include "tcp.h"
 #include <rte_ip.h>
 #include <rte_tcp.h>
+#include "tcp.h"
+#include "tcp_stream.h"
+#include "tcp_out.h"
+#include <unistd.h> // notice this! you need it!
 
 #define TCP_DEFAULT_MSS			1460
 enum tcp_state
@@ -46,8 +48,7 @@ void Handle_TCP_ST_LISTEN (
         struct tcp_instance * my_tcp,
         struct tcp_stream* cur_stream,
         struct rte_tcp_hdr* pkt_tcp_hdr,
-        struct rte_ether_hdr* pkt_eth_hdr,
-        struct rte_mbuf* pkt);
+        struct rte_ether_hdr* pkt_eth_hdr);
 //TODO: static inline
 void Handle_TCP_ST_SYN_RCVD (struct tcp_instance * my_tcp, struct tcp_stream* cur_stream, struct rte_tcp_hdr* pkt_tcp_hdr);
 #endif

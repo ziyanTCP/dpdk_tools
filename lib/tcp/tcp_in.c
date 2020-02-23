@@ -3,12 +3,7 @@
 //
 
 #include "tcp_in.h"
-#include "tcp.h"
-#include "tcp_stream.h"
-#include <rte_ip.h>
-#include <rte_tcp.h>
 
-#include <unistd.h> // notice this! you need it!
 struct tcp_stream * CreateNewFlowHTEntry(struct tcp_instance *my_tcp, struct rte_tcp_hdr* pkt_tcp_hdr,struct rte_ipv4_hdr* pkt_ip_hdr)
 {
     tcp_stream *cur_stream;
@@ -36,30 +31,16 @@ void Handle_TCP_ST_LISTEN (
         struct tcp_instance * my_tcp,
         struct tcp_stream* cur_stream,
         struct rte_tcp_hdr* pkt_tcp_hdr,
-        struct rte_ether_hdr* pkt_eth_hdr,
-        struct rte_mbuf* pkt){
+        struct rte_ether_hdr* pkt_eth_hdr){
     if (pkt_tcp_hdr->tcp_flags==TCP_FLAG_SYN) {
         cur_stream->state = TCP_ST_SYN_RCVD;
         printf("Stream %d: from TCP_ST_LISTEN to TCP_ST_SYN_RCVD\n", cur_stream->id);
-        //TODO: send the response packet. P1: How and when to send. P2: How to Compose the packet
-        //int ret = SendControlPacket(mystate, cur_stream, cur_ts);
         sleep(3);
-        printf("Stream %d: Send SYN, ACK \n", cur_stream->id);
+/*        printf("Stream %d: Send SYN, ACK \n", cur_stream->id);
         char data[]="";
-        send_tcp_segment_raw( pkt, data,
-                              cur_stream->dst_addr,
-                              cur_stream->src_addr,
-                              pkt_eth_hdr->d_addr,
-                              pkt_eth_hdr->s_addr,
-                              rte_cpu_to_be_16(8080),
-                              rte_cpu_to_be_16(8888),
-                              rte_cpu_to_be_32(0),
-                              rte_cpu_to_be_32(0),
-                              (uint8_t)0,
-                              RTE_TCP_ACK_FLAG,
-                              (uint16_t) 0,
-                              (uint16_t) 0);
-        printf("Stream %d: SYN, ACK sent\n", cur_stream->id);
+
+        printf("Stream %d: SYN, ACK sent\n", cur_stream->id);*/
+        AddtoControlList(my_tcp, cur_stream);
     }
     else {
         printf("Stream %d (TCP_ST_LISTEN): " "Packet without SYN.\n", cur_stream->id);

@@ -1,0 +1,8 @@
+//
+// Created by ziyan on 2/13/20.
+//
+
+#ifndef MYNETWORK_LIBRARY_QUEUE_H
+#define MYNETWORK_LIBRARY_QUEUE_H
+
+#endif //MYNETWORK_LIBRARY_QUEUE_H

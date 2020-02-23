@@ -7,6 +7,25 @@
 #include "../ip.h"
 #include "../mac.h"
 #include "hashtable.h"
+#include <rte_tcp.h>
+#include <rte_ether.h>
+
+#include "../dpdk_utility.h"
+struct sender
+{
+    int ifidx;
+
+    /* TCP layer send queues */
+    TAILQ_HEAD (control_head, tcp_stream) control_list;
+    TAILQ_HEAD (send_head, tcp_stream) send_list;
+    TAILQ_HEAD (ack_head, tcp_stream) ack_list;
+
+    int control_list_cnt;
+    int send_list_cnt;
+    int ack_list_cnt;
+};
+
+struct sender * CreateSender(int ifidx);
 
 struct tcp_instance {
 
@@ -14,10 +33,23 @@ struct tcp_instance {
     struct rte_mempool* rv_pool;			/* memory pool for recv variables */
     struct rte_mempool* sv_pool;			/* memory pool for send variables */
 
+    struct rte_mempool* packet_pool;
 
     struct hashtable *tcp_flow_table;
     uint32_t g_id;			/* id space in a thread */
     int32_t flow_cnt;		/* number of concurrent flows */
+
+
+    struct sender *g_sender;
+    // each sender for each ethernet port
+};
+
+
+struct tcp_cpu_context{
+    //the context manages the cpu
+    int cpu;
+    struct tcp_instance* tcpInstance;
+    struct dpdk_private_context* dpc;
 };
 
 struct rte_tcp_hdr* get_tcp_data(struct rte_mbuf *pkt);
@@ -53,4 +85,7 @@ void send_tcp_segment_raw(
         uint8_t  tcp_flags,  /**< TCP flags */
         rte_be16_t rx_win,  /**< RX flow control window. */
         rte_be16_t tcp_urp)  /**< TCP urgent pointer, if any. */;
+
+struct tcp_instance* init_tcp_instance(struct tcp_instance** tcp);
+struct tcp_cpu_context* init_tcp_cpu_context(struct tcp_cpu_context* cpu_ctx);
 #endif //MINIMAL_TX_IP_TCP_H
