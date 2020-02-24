@@ -212,5 +212,4 @@ dpdk_init.o: /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/dpdk_init.c \
  /home/ziyan/Dropbox/dpdk//x86_64-native-linuxapp-gcc/include/rte_esp.h \
  /home/ziyan/Dropbox/dpdk//x86_64-native-linuxapp-gcc/include/rte_higig.h \
  /home/ziyan/Dropbox/dpdk//x86_64-native-linuxapp-gcc/include/rte_mbuf_dyn.h \
- /home/ziyan/Dropbox/dpdk//x86_64-native-linuxapp-gcc/include/rte_ethdev_core.h \
- /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/dpdk_macro.h
+ /home/ziyan/Dropbox/dpdk//x86_64-native-linuxapp-gcc/include/rte_ethdev_core.h

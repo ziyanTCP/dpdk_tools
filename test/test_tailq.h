@@ -9,7 +9,7 @@
  * On many OpenBSD/NetBSD/FreeBSD you could include <sys/queue.h>, but
  * for portability we'll include the local copy.
  */
-#include "queue.h"
+#include  "queue.h"
 
 /*
  * This structure defines each item in our tail queue.  It must also
@@ -20,7 +20,6 @@
  */
 struct tailq_entry {
 	int value;
-
 	/*
 	 * This holds the pointers to the next and previous entries in
 	 * the tail queue.
@@ -34,14 +33,13 @@ struct tailq_entry {
  */
 TAILQ_HEAD(, tailq_entry) my_tailq_head;
 
-int
-main(int argc, char **argv)
+int test_tailq()
 {
 	/* Define a pointer to an item in the tail queue. */
 	struct tailq_entry *item;
 
-        /* In some cases we have to track a temporary item. */
-        struct tailq_entry *tmp_item;
+    /* In some cases we have to track a temporary item. */
+    struct tailq_entry *tmp_item;
 
 	int i;
 

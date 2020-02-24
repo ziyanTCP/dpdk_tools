@@ -29,16 +29,18 @@ int SendControlPacket(struct tcp_instance* tcp, tcp_stream *cur_stream)
             printf("inserted ...\n");
         }*/
         printf("SendControlPacket Send SYN/ACK\n");
-        struct rte_mbuf * pkt= rte_mbuf_raw_alloc( mbuf_pool);
+
+        struct rte_mbuf * pkt= rte_mbuf_raw_alloc(tcp->packet_pool);
+        struct rte_ether_addr temp;
         send_tcp_segment_raw( pkt, "",
                               cur_stream->src_addr,
                               cur_stream->dst_addr,
-                              my_addr,
-                              eth_dst_addr,
-                              rte_cpu_to_be_16(8888),
-                              rte_cpu_to_be_16(8080),
-                              rte_cpu_to_be_32(0),
-                              rte_cpu_to_be_32(0),
+                              temp,
+                              temp,
+                              cur_stream->src_port,
+                              cur_stream->dst_port,
+                              rte_cpu_to_be_32(0), //tx sequence
+                              rte_cpu_to_be_32(0), //rx sequence
                               (uint8_t)0,
                               RTE_TCP_SYN_FLAG,
                               (uint16_t) 0,

@@ -173,6 +173,22 @@ struct tcp_instance* init_tcp_instance(struct tcp_instance** tcp){
 
     (*tcp)->g_sender= CreateSender(0);
     printf( "************Create a sender for the instance ***********.\n");
+
+    (*tcp)->rbm_rcv= (struct rb_manager*) calloc(1, sizeof(struct rb_manager));
+    (*tcp)->rbm_rcv->chunk_size = 100;
+    (*tcp)->rbm_rcv->cnum = 1000; //don't now how much
+/*    sprintf(pool_name, "rbm_pool_%u", (*tcp)->ctx->cpu);*/
+    sprintf(pool_name, "rbm_pool_%u", 0);
+
+    sz = RTE_ALIGN_CEIL((*tcp)->rbm_rcv->chunk_size, RTE_CACHE_LINE_SIZE);
+    (*tcp)->rbm_rcv->mp= rte_mempool_create(pool_name, (*tcp)->rbm_rcv->cnum, sz, 0, 0, NULL,
+                                          0, NULL, 0, rte_socket_id(),MEMPOOL_F_NO_SPREAD);
+
+
+ /*   sz = RTE_ALIGN_CEIL((*tcp)->rbm_rcv->chunk_size, RTE_CACHE_LINE_SIZE);
+    (*tcp)->rbm_rcv->mp = rte_mempool_create(name, items, sz, 0, 0, NULL, 0, NULL, 0, rte_socket_id(), MEMPOOL_F_NO_SPREAD);*/
+
+    printf( "************Create RBM manager for the instance ***********.\n");
     printf("Initialization of tcp instance done\n");
 }
 

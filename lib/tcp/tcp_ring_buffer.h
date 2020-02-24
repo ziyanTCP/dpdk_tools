@@ -4,14 +4,9 @@
 
 #ifndef AUM2_COORDINATOR_INCLUDE_MIDDLEMAN_ACTORS_TCP_CONN_TCP_RING_BUFFER_H_
 #define AUM2_COORDINATOR_INCLUDE_MIDDLEMAN_ACTORS_TCP_CONN_TCP_RING_BUFFER_H_
-#include "middleman/actors/tcp_conn/tcp_rb_frag_queue.h"
+#include "../dpdk_utility.h"
 
 #define MAXSEQ               ((uint32_t)(0xFFFFFFFF))
-
-struct mbuf_table {
-  uint16_t len; /* length of queued packets */
-  struct rte_mbuf *m_table[MAX_PKT_BURST];
-};
 
 
 struct rb_manager
@@ -59,13 +54,11 @@ struct tcp_ring_buffer
 };
 
 
-struct tcp_ring_buffer* RBInit(struct actor_tcp_conn * mystate, uint32_t init_seq);
+struct tcp_ring_buffer* RBInit(struct tcp_instance * my_tcp, uint32_t init_seq);
 
 int RBPut(struct rb_manager* rbm, struct tcp_ring_buffer* buff, void* data, uint32_t len, uint32_t cur_seq);
 
 //TODO: static
 struct fragment_ctx * AllocateFragmentContext(struct rb_manager * rbm);
-
-
 
 #endif //AUM2_COORDINATOR_INCLUDE_MIDDLEMAN_ACTORS_TCP_CONN_TCP_RING_BUFFER_H_

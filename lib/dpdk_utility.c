@@ -110,7 +110,7 @@ void menu(struct rte_mbuf *pkt, struct rte_mbuf* recv_pkt, char data[],rte_be32_
               "\n2. Ack packet"
               "\n3. Syn Ack packet"
               "\n4. Establish a connection through a three-way handshake"
-              "\n5. TODO: send data"
+              "\n5. send data"
               "\n ");
 
         char c;
@@ -197,5 +197,21 @@ void menu(struct rte_mbuf *pkt, struct rte_mbuf* recv_pkt, char data[],rte_be32_
                 printf("ACK sent\n");
                 analyze_TCP_packet(recv_pkt);
                 break;
+            case '5':
+                send_tcp_segment_raw( pkt, "aaaaaaaaaaaa",
+                                      ip_src_addr,
+                                      ip_dst_addr,
+                                      my_addr,
+                                      eth_dst_addr,
+                                      rte_cpu_to_be_16(8888),
+                                      rte_cpu_to_be_16(8080),
+                                      rte_cpu_to_be_32(0),
+                                      rte_cpu_to_be_32(0),
+                                      (uint8_t)0,
+                                      NULL,
+                                      (uint16_t) 0,
+                                      (uint16_t) 0);
+                break;
+
         };
 }

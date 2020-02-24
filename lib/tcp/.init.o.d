@@ -222,4 +222,27 @@ init.o: /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/init.c \
  /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/tcp_stream.h \
  /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/socket.h \
  /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/base.h \
- /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/tcp_stream_queue.h
+ /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/tcp_stream_queue.h \
+ /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/../dpdk_utility.h \
+ /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/ip.h \
+ /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/mac.h \
+ /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/dpdk_init.h \
+ /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/tcp.h \
+ /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/../tcp/init.h \
+ /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/../tcp/tcp_action.h \
+ /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/../tcp/../dpdk_utility.h \
+ /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/../tcp/tcp_stream.h \
+ /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/../tcp/tcp_in.h \
+ /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/../tcp/tcp.h \
+ /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/../tcp/tcp_stream.h \
+ /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/../tcp/tcp_out.h \
+ /usr/include/unistd.h /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+ /usr/include/x86_64-linux-gnu/bits/environments.h \
+ /usr/include/x86_64-linux-gnu/bits/confname.h \
+ /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
+ /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+ /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/../tcp/tcp_out.h \
+ /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/../tcp/dpdk_module.h \
+ /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/../tcp/../dpdk_macro.h \
+ /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/../tcp/tcp_ring_buffer.h \
+ /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/../tcp/tcp_rb_frag_queue.h

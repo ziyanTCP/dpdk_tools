@@ -1,8 +1,7 @@
 #ifndef TCP_RB_FRAG_QUEUE
 #define TCP_RB_FRAG_QUEUE
 
-#include "middleman/actors/tcp_conn/base.h"
-#include "middleman/actors/tcp_conn/tcp_conn_actor.h"
+#include "../dpdk_utility.h"
 
 #ifndef _INDEX_TYPE_
 #define _INDEX_TYPE_

@@ -33,6 +33,8 @@ struct tcp_instance {
     struct rte_mempool* rv_pool;			/* memory pool for recv variables */
     struct rte_mempool* sv_pool;			/* memory pool for send variables */
 
+    struct rb_manager* rbm_rcv;
+
     struct rte_mempool* packet_pool;
 
     struct hashtable *tcp_flow_table;

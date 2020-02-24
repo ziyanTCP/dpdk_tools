@@ -4,6 +4,22 @@
 
 #include "tcp_in.h"
 
+
+int ProcessTCPPayload(struct tcp_instance *my_tcp, struct tcp_stream *cur_stream){
+    printf("Process TCPpayload called\n");
+    struct  tcp_recv_vars * rcvvar= cur_stream->rcvvar;
+
+    /* allocate receive buffer if not exist */
+    if (!rcvvar->rcvbuf) {
+        rcvvar->rcvbuf = RBInit(my_tcp->rbm_rcv, rcvvar->irs + 1);
+    }
+
+/*    prev_rcv_nxt = cur_stream->rcv_nxt;*/
+    printf("TODO: Put in buffer\n");
+/*    ret = RBPut(my_tcp->rbm_rcv,
+                rcvvar->rcvbuf, payload, (uint32_t)payloadlen, seq);*/
+}
+
 struct tcp_stream * CreateNewFlowHTEntry(struct tcp_instance *my_tcp, struct rte_tcp_hdr* pkt_tcp_hdr,struct rte_ipv4_hdr* pkt_ip_hdr)
 {
     tcp_stream *cur_stream;
@@ -62,4 +78,14 @@ void Handle_TCP_ST_SYN_RCVD (struct tcp_instance * my_tcp, struct tcp_stream* cu
         //cur_stream->snd_nxt = sndvar->iss;
         //AddtoControlList(mtcp, cur_stream, cur_ts);
     }
+}
+
+void Handle_TCP_ST_ESTABLISHED (struct tcp_instance * my_tcp,
+                           tcp_stream* cur_stream, struct rte_tcp_hdr* pkt_tcp_hdr) {
+    if (pkt_tcp_hdr->tcp_flags==TCP_FLAG_SYN) {
+        printf("It's weird");
+    }
+    printf("Handle_TCP_ST_ESTABLISHED called \n");
+    ProcessTCPPayload(my_tcp,cur_stream);
+    //put data into buffer according to
 }

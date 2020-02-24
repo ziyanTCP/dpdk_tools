@@ -225,10 +225,21 @@ dpdk_utility.o: \
  /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/base.h \
  /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/tcp_stream_queue.h \
  /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/tcp.h \
+ /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/../dpdk_utility.h \
  /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/init.h \
  /home/ziyan/Dropbox/dpdk//x86_64-native-linuxapp-gcc/include/rte_malloc.h \
  /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/tcp_action.h \
- /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/../dpdk_utility.h \
  /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/tcp_stream.h \
  /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/tcp_in.h \
+ /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/tcp_out.h \
+ /usr/include/unistd.h /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+ /usr/include/x86_64-linux-gnu/bits/environments.h \
+ /usr/include/x86_64-linux-gnu/bits/confname.h \
+ /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
+ /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+ /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/tcp_out.h \
+ /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/dpdk_module.h \
+ /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/../dpdk_macro.h \
+ /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/tcp_ring_buffer.h \
+ /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/tcp_rb_frag_queue.h \
  /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/tcp.h

@@ -1,7 +1,7 @@
 //
 // Created by Ziyan Wu on 11/16/19.
 //
-#include "middleman/actors/tcp_conn/tcp_ring_buffer.h"
+#include "tcp_ring_buffer.h"
 struct fragment_ctx * AllocateFragmentContext(struct rb_manager * rbm)
 {
   /* this function should be called only in mtcp thread */
@@ -30,7 +30,7 @@ struct fragment_ctx * AllocateFragmentContext(struct rb_manager * rbm)
   return frag;
 }
 
-struct tcp_ring_buffer* RBInit(struct actor_tcp_conn * mystate, uint32_t init_seq)
+struct tcp_ring_buffer* RBInit(struct tcp_instance * my_tcp, uint32_t init_seq)
 {
   struct tcp_ring_buffer* buff = (struct tcp_ring_buffer*)calloc(1, sizeof(struct tcp_ring_buffer));
 
@@ -39,17 +39,17 @@ struct tcp_ring_buffer* RBInit(struct actor_tcp_conn * mystate, uint32_t init_se
     return NULL;
   }
 
-  int rc =  rte_mempool_get(mystate->rbm_rcv->mp , (void **)&buff->data);
+  int rc =  rte_mempool_get(my_tcp->rbm_rcv->mp , (void **)&buff->data);
 
   //memset(buff->data, 0, rbm->chunk_size);
 
-  buff->size = mystate->rbm_rcv->chunk_size;
+  buff->size = my_tcp->rbm_rcv->chunk_size;
   buff->head = buff->data;
   buff->head_seq = init_seq; // head_seq form RBInit from ProcessTCPPayload is  rcvvar->irs + 1 , which is seq in HandlePassiveOpen
   buff->init_seq = init_seq;
   buff->head_offset = buff->head - buff->data;
 
-  mystate->rbm_rcv->cur_num++;
+  my_tcp->rbm_rcv->cur_num++;
 
   return buff;
 }
@@ -207,4 +207,3 @@ int RBPut(struct rb_manager * rbm, struct tcp_ring_buffer* buff, void* data, uin
 
   return len;
 }
-

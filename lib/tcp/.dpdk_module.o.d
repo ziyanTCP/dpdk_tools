@@ -1,8 +1,9 @@
-tcp.o: /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/tcp.c \
+dpdk_module.o: \
+ /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/dpdk_module.c \
  /usr/include/stdc-predef.h \
  /home/ziyan/Dropbox/dpdk//x86_64-native-linuxapp-gcc/include/rte_config.h \
- /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/tcp.h \
- /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/../ip.h \
+ /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/dpdk_module.h \
+ /home/ziyan/Dropbox/dpdk//x86_64-native-linuxapp-gcc/include/rte_mbuf.h \
  /usr/lib/gcc/x86_64-linux-gnu/7/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
@@ -15,13 +16,20 @@ tcp.o: /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/tcp.c \
  /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
- /home/ziyan/Dropbox/dpdk//x86_64-native-linuxapp-gcc/include/rte_ip.h \
+ /home/ziyan/Dropbox/dpdk//x86_64-native-linuxapp-gcc/include/rte_compat.h \
+ /home/ziyan/Dropbox/dpdk//x86_64-native-linuxapp-gcc/include/rte_common.h \
+ /usr/include/stdlib.h /usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h \
+ /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+ /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
+ /usr/include/x86_64-linux-gnu/bits/floatn.h \
+ /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
+ /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
  /usr/include/x86_64-linux-gnu/sys/types.h \
  /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
- /usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h /usr/include/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/types/timer_t.h /usr/include/endian.h \
  /usr/include/x86_64-linux-gnu/bits/endian.h \
  /usr/include/x86_64-linux-gnu/bits/byteswap.h \
  /usr/include/x86_64-linux-gnu/bits/byteswap-16.h \
@@ -37,25 +45,6 @@ tcp.o: /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/tcp.c \
  /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
  /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
  /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
- /usr/include/netinet/in.h /usr/include/x86_64-linux-gnu/sys/socket.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h \
- /usr/include/x86_64-linux-gnu/bits/socket.h \
- /usr/include/x86_64-linux-gnu/bits/socket_type.h \
- /usr/include/x86_64-linux-gnu/bits/sockaddr.h \
- /usr/include/x86_64-linux-gnu/asm/socket.h \
- /usr/include/asm-generic/socket.h \
- /usr/include/x86_64-linux-gnu/asm/sockios.h \
- /usr/include/asm-generic/sockios.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h \
- /usr/include/x86_64-linux-gnu/bits/in.h /usr/include/netinet/ip.h \
- /home/ziyan/Dropbox/dpdk//x86_64-native-linuxapp-gcc/include/rte_byteorder.h \
- /home/ziyan/Dropbox/dpdk//x86_64-native-linuxapp-gcc/include/rte_common.h \
- /usr/include/stdlib.h /usr/include/x86_64-linux-gnu/bits/waitflags.h \
- /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
- /usr/include/x86_64-linux-gnu/bits/floatn.h \
- /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
- /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
  /usr/include/alloca.h /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
  /usr/include/ctype.h /usr/include/errno.h \
  /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
@@ -73,10 +62,6 @@ tcp.o: /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/tcp.c \
  /home/ziyan/Dropbox/dpdk//lib/librte_eal/linux/eal/include/rte_os.h \
  /usr/include/sched.h /usr/include/x86_64-linux-gnu/bits/sched.h \
  /usr/include/x86_64-linux-gnu/bits/cpu-set.h \
- /home/ziyan/Dropbox/dpdk//x86_64-native-linuxapp-gcc/include/generic/rte_byteorder.h \
- /home/ziyan/Dropbox/dpdk//x86_64-native-linuxapp-gcc/include/rte_byteorder_64.h \
- /home/ziyan/Dropbox/dpdk//x86_64-native-linuxapp-gcc/include/rte_mbuf.h \
- /home/ziyan/Dropbox/dpdk//x86_64-native-linuxapp-gcc/include/rte_compat.h \
  /home/ziyan/Dropbox/dpdk//x86_64-native-linuxapp-gcc/include/rte_mempool.h \
  /usr/include/stdio.h /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
  /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
@@ -191,9 +176,26 @@ tcp.o: /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/tcp.c \
  /usr/lib/gcc/x86_64-linux-gnu/7/include/pkuintrin.h \
  /home/ziyan/Dropbox/dpdk//x86_64-native-linuxapp-gcc/include/rte_prefetch.h \
  /home/ziyan/Dropbox/dpdk//x86_64-native-linuxapp-gcc/include/generic/rte_prefetch.h \
+ /home/ziyan/Dropbox/dpdk//x86_64-native-linuxapp-gcc/include/rte_byteorder.h \
+ /home/ziyan/Dropbox/dpdk//x86_64-native-linuxapp-gcc/include/generic/rte_byteorder.h \
+ /home/ziyan/Dropbox/dpdk//x86_64-native-linuxapp-gcc/include/rte_byteorder_64.h \
  /home/ziyan/Dropbox/dpdk//x86_64-native-linuxapp-gcc/include/rte_mbuf_ptype.h \
  /home/ziyan/Dropbox/dpdk//x86_64-native-linuxapp-gcc/include/rte_mbuf_core.h \
  /home/ziyan/Dropbox/dpdk//x86_64-native-linuxapp-gcc/include/generic/rte_atomic.h \
+ /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/tcp.h \
+ /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/../ip.h \
+ /home/ziyan/Dropbox/dpdk//x86_64-native-linuxapp-gcc/include/rte_ip.h \
+ /usr/include/netinet/in.h /usr/include/x86_64-linux-gnu/sys/socket.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h \
+ /usr/include/x86_64-linux-gnu/bits/socket.h \
+ /usr/include/x86_64-linux-gnu/bits/socket_type.h \
+ /usr/include/x86_64-linux-gnu/bits/sockaddr.h \
+ /usr/include/x86_64-linux-gnu/asm/socket.h \
+ /usr/include/asm-generic/socket.h \
+ /usr/include/x86_64-linux-gnu/asm/sockios.h \
+ /usr/include/asm-generic/sockios.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h \
+ /usr/include/x86_64-linux-gnu/bits/in.h /usr/include/netinet/ip.h \
  /home/ziyan/Dropbox/dpdk//x86_64-native-linuxapp-gcc/include/rte_ether.h \
  /home/ziyan/Dropbox/dpdk//x86_64-native-linuxapp-gcc/include/rte_random.h \
  /home/ziyan/Dropbox/dpdk//x86_64-native-linuxapp-gcc/include/rte_ethdev.h \
@@ -240,6 +242,6 @@ tcp.o: /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/tcp.c \
  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
  /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/../tcp/tcp_out.h \
  /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/../tcp/dpdk_module.h \
- /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/../tcp/../dpdk_macro.h \
  /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/../tcp/tcp_ring_buffer.h \
- /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/../tcp/tcp_rb_frag_queue.h
+ /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/../tcp/tcp_rb_frag_queue.h \
+ /home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/../dpdk_macro.h
