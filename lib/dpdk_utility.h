@@ -12,10 +12,10 @@
 
 #include <rte_tcp.h>
 #include <rte_ip.h>
-#include "/home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/ip.h"
-#include "/home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/mac.h"
-#include "/home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/dpdk_init.h"
-#include "/home/ziyan/Dropbox/mylibrary/dpdk_tools/lib/tcp/tcp.h"
+#include "/home/ziyan/Dropbox/mylibrary/ziyan_tcpstack/lib/ip.h"
+#include "/home/ziyan/Dropbox/mylibrary/ziyan_tcpstack/lib/mac.h"
+#include "/home/ziyan/Dropbox/mylibrary/ziyan_tcpstack/lib/dpdk_init.h"
+#include "/home/ziyan/Dropbox/mylibrary/ziyan_tcpstack/lib/tcp/tcp.h"
 
 
 #include "tcp/init.h"
